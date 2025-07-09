@@ -13,18 +13,18 @@ VALIDATE(){
 
 if [ "$?" -eq 0 ]
 then
-        echo "$GSUCCESSFUL INSTALLATION$N"
+        echo -e "$G SUCCESSFUL INSTALLATION $N"
 else
-        echo "$RERROR.INSTALLATION FAILED$N"
+        echo -e "$R ERROR.INSTALLATION FAILED$N"
 fi
 }
 
 if [ "$ID" -ne 0 ]
 then
-        echo " $RERROR:RUN WITH ROOT USER$N "
+        echo -e " $R ERROR:RUN WITH ROOT USER $N "
         exit 1
 else
-        echo " $Gyou are root user$N"
+        echo -e" $G you are root user $N"
 	
 fi
 
