@@ -13,18 +13,19 @@ VALIDATE(){
 
 if [ "$?" -eq 0 ]
 then
-        echo "$G SUCCESSFUL INSTALLATION $N"
+        echo "$GSUCCESSFUL INSTALLATION$N"
 else
-        echo "$R ERROR.INSTALLATION FAILED $N"
+        echo "$RERROR.INSTALLATION FAILED$N"
 fi
 }
 
 if [ "$ID" -ne 0 ]
 then
-        echo " $R ERROR:RUN WITH ROOT USER $N "
+        echo " $RERROR:RUN WITH ROOT USER$N "
         exit 1
 else
-        echo " $G you are root user $N"
+        echo " $Gyou are root user$N"
+	
 fi
 
 yum install mysql -y  &>>LOGFILE #&>> gives both success and failed logs into logfile
