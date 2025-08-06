@@ -11,11 +11,11 @@ N="\e[0m"
 
 VALIDATE(){
 
-if [ "$?" -eq 0 ]
+if [ "$1" -eq 0 ]
 then
-        echo -e "$G SUCCESSFUL INSTALLATION $N"
+        echo -e "$G $2 SUCCESS $N"
 else
-        echo -e "$R ERROR.INSTALLATION FAILED $N"
+        echo -e "$R $2 FAILED $N"
 fi
 }
 
@@ -28,12 +28,12 @@ else
 	
 fi
 
-yum install mysql -y  &>>LOGFILE #&>> gives both success and failed logs into logfile
+yum install mysql -y  &>>$LOGFILE #&>> gives both success and failed logs into logfile
 
-VALIDATE
+VALIDATE $1 "installing mysql"
 
-yum install git -y &>>LOGFILE
+yum install git -y &>>$LOGFILE
 
-VALIDATE
+VALIDATE $1 "installing git "
 
 
